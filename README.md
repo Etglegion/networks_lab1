@@ -40,7 +40,7 @@
  SSH сервер активен. <br>
 ![Статус работы SSH сервера](process_images/ssh_server_status_report.PNG)<br>
  Из машины хоста через командную строку установлено подключение к ВМ через SSH сервер, с вводом пароля.
-![Подключение к гостю через SSH из хоста](process_images/shh-to-guest_connection_tested.PNG)<br>
+![Подключение к гостю через SSH из хоста](process_images/ssh-to-guest_connection_tested.PNG)<br>
 ### Подключение с использованием ключей доступа.
  Сгенерирована пара ключей используя алгоритм Ed25519. <br>
 ![Генерация ключей](process_images/key_generated.PNG)<br>
