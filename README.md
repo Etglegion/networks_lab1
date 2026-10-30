@@ -5,46 +5,46 @@
 ### Установка VirtualBox и настройка изначальных парамтеров ВМ.
  Установлен гипервизор Oracle VirtualBox с официального вебсайта https://www.virtualbox.org/wiki/Downloads.
  Установлено имя ВМ.
-![Имя ВМ](process_images/sys_name.PNG)
+![Имя ВМ](process_images/sys_name.PNG)<br>
  Установлено имя пользователя ВМ.
-![Имя пользователя ВМ](process_images/user_name.PNG)
+![Имя пользователя ВМ](process_images/user_name.PNG)<br>
  Выделена оперативная память и количество ЦПУ для ВМ.
-![Количество ОЗУ и выделенные ЦПУ](process_images/ram_and_cpu.PNG) 
+![Количество ОЗУ и выделенные ЦПУ](process_images/ram_and_cpu.PNG) <br>
  Выделена память на жёстком диске для ВМ.
-![Размер виртуального диска](process_images/disk_size.PNG) 
- ВМ настроена, запускается без ошибок
-![Проверка статуса ВМ](process_images/VM_operational.PNG) 
+![Размер виртуального диска](process_images/disk_size.PNG) <br>
+ ВМ настроена, запускается без ошибок.
+![Проверка статуса ВМ](process_images/VM_operational.PNG) <br>
 ### Настройка параметров внутри ВМ.
  Добавлен новый пользователь - testuser.
-![Тестовый пользователь](process_images/test_user_added.PNG)
+![Тестовый пользователь](process_images/test_user_added.PNG)<br>
  Вызвано окно конфигурации локалей используя команду dpkg-reconfigure locales.  В списке доступных локалей выбранна русская, после перезагрузки установлен желаемый язык.
-![Конфигурация локалей](process_images/locales_config.PNG)
-![Установлен русский язык](process_images/ru_set.PNG)
-![Локали изменены](process_images/updated_&_changed_locales.PNG)
+![Конфигурация локалей](process_images/locales_config.PNG)<br>
+![Установлен русский язык](process_images/ru_set.PNG)<br>
+![Локали изменены](process_images/updated_&_changed_locales.PNG)<br>
  Тестовому пользователю выданы привелегии суперюзера.
-![Тестовый пользователь - суперюзер](process_images/test_user_sudo.PNG)
+![Тестовый пользователь - суперюзер](process_images/test_user_sudo.PNG)<br>
  С помощью команды dpkg-reconfigure tzdata открыто окно конфигурации настроек временной зоны и выбрана желаемая зона.
 ![Окно конфигурации временной зона](process_images/timezone.PNG)
-![Смена временной зоны подтверждена](process_images/console_timezone.PNG)
+![Смена временной зоны подтверждена](process_images/console_timezone_set.PNG)<br>
 ## Настройка сетевого подключения и загрузка обновлений.
  Проверены подключения через сетевые адаптеры: перечислены подключения NAT (enp0s3) и Briged (enp0s8). В дальнейшем используется Briged подключение.
-![Проверка айпи подключений](process_images/ips.PNG)
- Соединение проверенно пингом Гугла 12 пакетами, ни один из которых не теряется, что подтверждает успешно установленное соединение.
-![Проверка пингом](process_images/connection_verified.PNG)
+![Проверка айпи подключений](process_images/ips.PNG)<br>
+ Соединение проверенно пингом Гугла 12 пакетами, ни один из которых не теряется, что подтверждает успешно установленное соединение. <br>
+![Проверка пингом](process_images/connection_verified.PNG)<br>
  Проведён поиск обновлений, версия системы актуальна и не требует дополнительных подгрузок.
-![Установка обновлений](process_images/sys_updated.PNG)
+![Установка обновлений](process_images/sys_updated.PNG)<br>
 ## Установка SSH сервера, его настройка, и удалённое подключение к гостю из хоста.
 ### Подключение с использованием пароля.
  Успешно установлен OpenSSH.
-![Установка SSH сервера](process_images/ssh_install.PNG)
- SSH сервер активен.
-![Статус работы SSH сервера](process_images/ssh_server_status_report.PNG)
+![Установка SSH сервера](process_images/ssh_install.PNG)<br>
+ SSH сервер активен. <br>
+![Статус работы SSH сервера](process_images/ssh_server_status_report.PNG)<br>
  Из машины хоста через командную строку установлено подключение к ВМ через SSH сервер, с вводом пароля.
-![Подключение к гостю через SSH из хоста](process_images/ssh-to-guest_connection_tested.PNG)
+![Подключение к гостю через SSH из хоста](process_images/shh-to-guest_connection_tested.PNG)<br>
 ### Подключение с использованием ключей доступа.
- Сгенерирована пара ключей используя алгоритм Ed25519.
-![Генерация ключей](process_images/key_generated.PNG)
+ Сгенерирована пара ключей используя алгоритм Ed25519. <br>
+![Генерация ключей](process_images/key_generated.PNG)<br>
  Содержание файла публичного ключа передано в ВМ, в которой создаётся директория .ssh и файл для авторизованных ключей authorized_keys, которым выдаются уровни доступа chmod 600 (Владелец может читать и менять, но не выполнять) и chmod 700 (Владелец может читать, менять и выполнять). В authorized_keys записывается содержание ключа. Происходит успешный вход в систему без ввода пароля.
-![Подключение с использованием ключа](process_images/key_authorized_connection_established.PNG)
+![Подключение с использованием ключа](process_images/key_authorized_connection_established.PNG)<br>
 # Вывод:
 В процессе выполнения лабораторной работы установлен гипервизор Oracle VirtualBox, создана и настроена виртуальная машина. Настроен сервер SSH, и подключение к гостю через ключи аутентификации SSH.
